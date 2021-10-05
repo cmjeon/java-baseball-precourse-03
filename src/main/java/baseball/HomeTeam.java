@@ -13,7 +13,6 @@ public class HomeTeam {
 		String guessedNumberString = "";
 		do {
 			guessedNumbers.clear();
-			System.out.print("숫자를 입력해주세요 : ");
 			guessedNumberString = Console.readLine();
 		} while (validateGuessedNumber(guessedNumberString));
 		return guessedNumbers;
@@ -28,14 +27,13 @@ public class HomeTeam {
 			result = true;
 			return result;
 		}
-		return result;
+		return false;
 	}
 
 	private void StringToIntegerGuessedNumberList(String guessedNumberString) throws Exception {
 		ArrayList<String> stringList = new ArrayList<String>(Arrays.asList(guessedNumberString.split("")));
 		for (String str : stringList) {
 			isDuplicatedNumberInList(Integer.parseInt(str));
-			
 		}
 		if (guessedNumbers.size() != 3) {
 			throw new Exception();

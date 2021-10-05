@@ -29,17 +29,12 @@ public class Umpire {
 		resultNumbers.add(0);
 	}
 
-	public boolean checkGuesssedNumber(ArrayList<Integer> guessedNumbers) {
-		boolean match = false;
+	public ArrayList<Integer> checkGuesssedNumber(ArrayList<Integer> guessedNumbers) {
 		resetResultNumbers();
 		for (int i = 0; i < guessedNumbers.size(); i++) {
 			checkNumberInRandomNumbers(i, guessedNumbers.get(i));
 		}
-		printResultMessage();
-		if(resultNumbers.get(0) == 3) {	
-			match = true;
-		}
-		return match;
+		return resultNumbers;
 	}
 
 	private void checkNumberInRandomNumbers(int index, int num) {
@@ -60,22 +55,6 @@ public class Umpire {
 		} else {
 			resultNumbers.set(1, resultNumbers.get(1) + 1);
 		}
-	}
-
-	private void printResultMessage() {
-		if (resultNumbers.get(0) == 0 && resultNumbers.get(1) == 0) {
-			System.out.print("낫싱");
-		}
-		if (resultNumbers.get(0) != 0) {
-			System.out.print(resultNumbers.get(0) + "스트라이크");
-		}
-		if (resultNumbers.get(0) != 0 && resultNumbers.get(1) != 0) {
-			System.out.print(" ");
-		}
-		if (resultNumbers.get(1) != 0) {
-			System.out.print(resultNumbers.get(1) + "볼");
-		}
-		System.out.println();
 	}
 
 }
