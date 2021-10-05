@@ -8,11 +8,11 @@ public class AwayTeam {
 
 	private ArrayList<Integer> randomNumbers = new ArrayList<Integer>();
 
-	public void setRandomNumber(ArrayList<Integer> randomNumbers) {
+	public void setRandomNumbers(ArrayList<Integer> randomNumbers) {
 		this.randomNumbers = randomNumbers;
 	}
 
-	public ArrayList<Integer> getRandomNumber() {
+	public ArrayList<Integer> getRandomNumbers() {
 		return randomNumbers;
 	}
 	
@@ -24,7 +24,7 @@ public class AwayTeam {
 		} while (isPreparingRandomNumbers());
 	}
 
-	private boolean isPreparingRandomNumbers() {
+	public boolean isPreparingRandomNumbers() {
 		ArrayList<Integer> newList = new ArrayList<Integer>();
 		for (Integer i : randomNumbers) {
 			newList = getListWithUnduplicatedNumbers(newList, i);
@@ -36,7 +36,7 @@ public class AwayTeam {
 		return false;
 	}
 
-	private ArrayList<Integer> getListWithUnduplicatedNumbers(ArrayList<Integer> newList, int i) {
+	public ArrayList<Integer> getListWithUnduplicatedNumbers(ArrayList<Integer> newList, int i) {
 		if (!newList.contains(i)) {
 			newList.add(i);
 		}

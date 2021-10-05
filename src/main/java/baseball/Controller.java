@@ -34,9 +34,9 @@ public class Controller {
 
 		awayTeam.makeNewRandomNumbers();
 		do {
-			umpire.setGoalNumbers(awayTeam.getRandomNumber());
+			umpire.setGoalNumbers(awayTeam.getRandomNumbers());
 			view.inputNumberMessage();
-			ArrayList<Integer> guessedNumbers = homeTeam.getGuessedNumber();
+			ArrayList<Integer> guessedNumbers = homeTeam.getGuessedNumberFromReadLine();
 			ArrayList<Integer> resultNumbers = umpire.checkGuesssedNumber(guessedNumbers);
 			view.resultMessage(resultNumbers);
 			isMatch = checkIsWin(resultNumbers);
