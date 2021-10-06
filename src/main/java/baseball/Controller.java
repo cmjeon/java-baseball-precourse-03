@@ -23,7 +23,7 @@ public class Controller {
 
 		do {
 			runGame();
-			isGameContinue = askReGame();
+			isGameContinue = askRegame();
 		} while (isGameContinue);
 		view.endMessage();
 	}
@@ -37,22 +37,22 @@ public class Controller {
 			umpire.setGoalNumbers(awayTeam.getRandomNumbers());
 			view.inputNumberMessage();
 			ArrayList<Integer> guessedNumbers = homeTeam.getGuessedNumberFromReadLine();
-			ArrayList<Integer> resultNumbers = umpire.checkGuesssedNumber(guessedNumbers);
+			ArrayList<Integer> resultNumbers = umpire.checkGuessedNumber(guessedNumbers);
 			view.resultMessage(resultNumbers);
-			isMatch = checkIsWin(resultNumbers);
+			isMatch = isMatchAll(resultNumbers);
 		} while (!isMatch);
 		view.winMessage();
 		return isMatch;
 	}
 
-	private boolean checkIsWin(ArrayList<Integer> resultNumbers) {
+	private boolean isMatchAll(ArrayList<Integer> resultNumbers) {
 		if(resultNumbers.get(0) == 3) {	
 			return true;
 		}
 		return false;
 	}
 
-	private boolean askReGame() {
+	private boolean askRegame() {
 		view.askReGameMessage();
 		String answerString = Console.readLine();
 		if (Integer.valueOf(answerString) == 1) {

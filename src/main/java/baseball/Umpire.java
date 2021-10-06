@@ -29,7 +29,7 @@ public class Umpire {
 		resultNumbers.add(0);
 	}
 
-	public ArrayList<Integer> checkGuesssedNumber(ArrayList<Integer> guessedNumbers) {
+	public ArrayList<Integer> checkGuessedNumber(ArrayList<Integer> guessedNumbers) {
 		resetResultNumbers();
 		for (int i = 0; i < guessedNumbers.size(); i++) {
 			checkNumberInRandomNumbers(i, guessedNumbers.get(i));
@@ -39,11 +39,11 @@ public class Umpire {
 
 	public void checkNumberInRandomNumbers(int index, int num) {
 		for (int i = 0; i < goalNumbers.size(); i++) {
-			checkStrikiOrBall(index, num, i);
+			checkStrikeOrBall(index, num, i);
 		}
 	}
 
-	public void checkStrikiOrBall(int index, int num, int randomIndex) {
+	public void checkStrikeOrBall(int index, int num, int randomIndex) {
 		if (num == goalNumbers.get(randomIndex)) {
 			isStrikeOrBall(index, randomIndex);
 		}

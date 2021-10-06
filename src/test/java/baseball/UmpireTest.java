@@ -27,27 +27,27 @@ public class UmpireTest {
 		guessList.add(1);
 		guessList.add(2);
 		guessList.add(3);
-		assertThat(um.checkGuesssedNumber(guessList)).hasSize(2).containsExactly(3, 0);
+		assertThat(um.checkGuessedNumber(guessList)).hasSize(2).containsExactly(3, 0);
 		guessList.clear();
 		guessList.add(1);
 		guessList.add(4);
 		guessList.add(5);
-		assertThat(um.checkGuesssedNumber(guessList)).hasSize(2).containsExactly(1, 0);
+		assertThat(um.checkGuessedNumber(guessList)).hasSize(2).containsExactly(1, 0);
 		guessList.clear();
 		guessList.add(2);
 		guessList.add(4);
 		guessList.add(5);
-		assertThat(um.checkGuesssedNumber(guessList)).hasSize(2).containsExactly(0, 1);
+		assertThat(um.checkGuessedNumber(guessList)).hasSize(2).containsExactly(0, 1);
 		guessList.clear();
 		guessList.add(1);
 		guessList.add(3);
 		guessList.add(5);
-		assertThat(um.checkGuesssedNumber(guessList)).hasSize(2).containsExactly(1, 1);
+		assertThat(um.checkGuessedNumber(guessList)).hasSize(2).containsExactly(1, 1);
 		guessList.clear();
 		guessList.add(3);
 		guessList.add(1);
 		guessList.add(2);
-		assertThat(um.checkGuesssedNumber(guessList)).hasSize(2).containsExactly(0, 3);
+		assertThat(um.checkGuessedNumber(guessList)).hasSize(2).containsExactly(0, 3);
 	}
 
 	@Test
@@ -76,9 +76,9 @@ public class UmpireTest {
 		goalList.add(3);
 		um.setGoalNumbers(goalList);
 		um.resetResultNumbers();
-		um.checkStrikiOrBall(0, 1, 0);
+		um.checkStrikeOrBall(0, 1, 0);
 		assertThat(um.getResultNumbers()).hasSize(2).containsExactly(1, 0);
-		um.checkStrikiOrBall(1, 2, 1);
+		um.checkStrikeOrBall(1, 2, 1);
 		assertThat(um.getResultNumbers()).hasSize(2).containsExactly(2, 0);
 	}
 
